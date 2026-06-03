@@ -92,7 +92,7 @@ body {
 .decor-svg {
   position: absolute;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.08; /* Slightly increased visibility to establish podcast mood */
   color: var(--color-primary);
   z-index: 0;
 }
@@ -100,14 +100,21 @@ body {
 .decor-headphones {
   top: 15%;
   right: 5%;
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
 }
 
 .decor-wave {
-  bottom: 10%;
+  bottom: 15%;
   left: 2%;
-  width: 250px;
+  width: 280px;
+}
+
+.decor-mic {
+  bottom: 25%;
+  right: 3%;
+  width: 150px;
+  height: 150px;
 }
 
 /* --------------------------------------------------------------------------
@@ -391,7 +398,30 @@ body {
   transform: translateY(-2px);
 }
 
-/* Host Image & Duotone Effect */
+/* Section Divider Wave linking Hero to Episodes */
+.section-divider {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: 2;
+}
+
+.section-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+.section-divider path {
+  fill: var(--color-card-bg);
+}
+
+/* Host Image & Hover Layout */
 .hero-image-wrapper {
   position: relative;
   justify-self: center;
