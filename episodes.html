@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Episodes | X Talks</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Browse and search through all episodes of X Talks, a podcast hosted by Abdelrahman Hossam focusing on modern masculinity, relationships, mental health, and family law.">
+  <meta name="keywords" content="X Talks, Abdelrahman Hossam, podcast, episodes, masculinity, society, personal growth">
+  <meta name="author" content="Habiba Saber">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SVG Duotone Filter Definition (Hidden) -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+    <filter id="duotone">
+      <!-- Convert image to grayscale based on standard luminance -->
+      <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0
+                                           0.2126 0.7152 0.0722 0 0
+                                           0.2126 0.7152 0.0722 0 0
+                                           0      0      0      1 0" />
+      <!-- Map dark areas to deep navy/royal blue (#1A2EFF) and light areas to white (#FFFFFF) -->
+      <feComponentTransfer color-interpolation-filters="sRGB">
+        <feFuncR type="table" tableValues="0.10196 1" />
+        <feFuncG type="table" tableValues="0.18039 1" />
+        <feFuncB type="table" tableValues="1.00000 1" />
+        <feFuncA type="table" tableValues="0 1" />
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
+  <!-- Grain overlay for depth/texture -->
+  <div class="grain-overlay"></div>
+
+  <!-- Background SVG motifs -->
+  <svg class="decor-svg decor-headphones" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+  </svg>
+
+  <!-- Sticky Header Navigation -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo-link" id="nav-logo">
+        <img src="images/logo.png" alt="X Talks Logo" class="logo-img">
+        <span>X Talks</span>
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="episodes.html" class="nav-link active">Episodes</a></li>
+          <li><a href="index.html#about" class="nav-link">About Host</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Browse Section -->
+  <main style="padding-top: 140px; padding-bottom: 100px; min-height: 80vh;">
+    <div class="container">
+      
+      <div class="section-header reveal">
+        <span class="section-tag">Explore Conversations</span>
+        <h1 class="section-title" style="margin-bottom: 16px;">All Podcast Episodes</h1>
+        <p style="color: var(--color-text-muted); font-size: 1.1rem; max-width: 600px;">
+          Search or filter through our conversations. Click an episode to watch Abdelrahman Hossam discuss real societal, mental health, and family dynamics with leading experts.
+        </p>
+      </div>
+
+      <!-- Filters & Search -->
+      <div class="filter-container reveal reveal-delay-1">
+        <div class="search-wrapper">
+          <input type="text" id="episode-search" class="search-input" placeholder="Search by title, topic, or guest...">
+          <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+
+        <div class="filter-tags" id="filter-tags">
+          <button class="filter-tag active" data-filter="all">All Guests</button>
+          <button class="filter-tag" data-filter="Mohamed Abou El Ela">Mohamed Abou El Ela</button>
+          <button class="filter-tag" data-filter="Dr. Nagwa El Abassiri">Dr. Nagwa El Abassiri</button>
+          <button class="filter-tag" data-filter="Badr Essam">Badr Essam</button>
+          <button class="filter-tag" data-filter="Barakat Ibrahim">Barakat Ibrahim</button>
+        </div>
+      </div>
+
+      <!-- Episode Grid -->
+      <div class="episodes-grid" id="episodes-grid-page">
+        
+        <!-- Episode 1 Card -->
+        <article class="episode-card reveal" data-guest="Mohamed Abou El Ela">
+          <div class="card-cover-wrapper">
+            <span class="episode-badge">EP 01</span>
+            <img src="images/ep1.jpg" alt="Men on Screen: Reality vs. Representation cover" class="card-cover" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="card-guest">Guest: Mohamed Abou El Ela</span>
+              <span class="card-duration">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                  <path d="M13 7h-2v6h6v-2h-4z"/>
+                </svg>
+                41:57
+              </span>
+            </div>
+            <h3 class="card-title">Men on Screen: Reality vs. Representation</h3>
+            <div class="card-cta-wrapper">
+              <a href="https://youtu.be/-YKQa3Izwsw?si=bwrvC21eQlZ4fs4l" target="_blank" rel="noopener noreferrer" class="btn-card">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                Watch Episode
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Episode 2 Card -->
+        <article class="episode-card reveal" data-guest="Dr. Nagwa El Abassiri">
+          <div class="card-cover-wrapper">
+            <span class="episode-badge">EP 02</span>
+            <img src="images/ep2.jpg" alt="Men & the Law: Custody, Visitation & Bias cover" class="card-cover" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="card-guest">Guest: Dr. Nagwa El Abassiri</span>
+              <span class="card-duration">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                  <path d="M13 7h-2v6h6v-2h-4z"/>
+                </svg>
+                22:14
+              </span>
+            </div>
+            <h3 class="card-title">Men & the Law: Custody, Visitation & Bias</h3>
+            <div class="card-cta-wrapper">
+              <a href="https://youtu.be/uYAQMHeiPJ8?si=V07BS-Zg1K0MeWy4" target="_blank" rel="noopener noreferrer" class="btn-card">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                Watch Episode
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Episode 3 Card -->
+        <article class="episode-card reveal" data-guest="Badr Essam">
+          <div class="card-cover-wrapper">
+            <span class="episode-badge">EP 03</span>
+            <img src="images/ep3.jpg" alt="Relationships & Self-Awareness cover" class="card-cover" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="card-guest">Guest: Badr Essam</span>
+              <span class="card-duration">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                  <path d="M13 7h-2v6h6v-2h-4z"/>
+                </svg>
+                36:18
+              </span>
+            </div>
+            <h3 class="card-title">Relationships & Self-Awareness</h3>
+            <div class="card-cta-wrapper">
+              <a href="https://youtu.be/sBoGHgOM4zk?si=J2KBVcHdUiOvt932" target="_blank" rel="noopener noreferrer" class="btn-card">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                Watch Episode
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Episode 4 Card -->
+        <article class="episode-card reveal" data-guest="Barakat Ibrahim">
+          <div class="card-cover-wrapper">
+            <span class="episode-badge">EP 04</span>
+            <img src="images/ep4.jpg" alt="Breaking the Stigma: Mental Awareness & Support cover" class="card-cover" loading="lazy">
+          </div>
+          <div class="card-content">
+            <div class="card-meta">
+              <span class="card-guest">Guest: Barakat Ibrahim</span>
+              <span class="card-duration">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                  <path d="M13 7h-2v6h6v-2h-4z"/>
+                </svg>
+                43:37
+              </span>
+            </div>
+            <h3 class="card-title">Breaking the Stigma: Mental Awareness & Support</h3>
+            <div class="card-cta-wrapper">
+              <a href="https://youtu.be/2EPbns8SjwY?si=JCqQ7-4GPocrWHHz" target="_blank" rel="noopener noreferrer" class="btn-card">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                Watch Episode
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Empty State / No Results found -->
+      <div id="no-results" class="no-results">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <h3>No episodes matched your search</h3>
+        <p style="margin-bottom: 24px;">Try checking your spelling or adjusting the guest filter badge.</p>
+        <button id="reset-search" class="btn btn-primary" style="padding: 12px 24px; font-size: 0.95rem;">Clear All Filters</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="footer-top">
+        <img src="images/logo.png" alt="X Talks Logo" class="footer-logo">
+        <ul class="footer-nav">
+          <li><a href="index.html" class="footer-nav-link">Home</a></li>
+          <li><a href="episodes.html" class="footer-nav-link">Episodes</a></li>
+          <li><a href="index.html#about" class="footer-nav-link">About Host</a></li>
+          <li><a href="https://youtube.com/@Xtalks" target="_blank" rel="noopener noreferrer" class="footer-nav-link">YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 X Talks. All rights reserved.</p>
+        <p class="developer-credit">Website developed by <span>Habiba Saber</span></p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script logic -->
+  <script src="script.js"></script>
+</body>
+</html>
