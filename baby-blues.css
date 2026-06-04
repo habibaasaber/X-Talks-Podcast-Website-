@@ -36,3 +36,42 @@
 @media (prefers-reduced-motion: reduce){
   .footer-soundwave path{ animation: none; }
 }
+
+/* Ensure filter tags are readable in light theme */
+body.light-theme .filter-tag{
+  color: #043049; /* dark baby-blue text */
+  background: rgba(62,163,255,0.06);
+  border: 1px solid rgba(62,163,255,0.14);
+}
+body.light-theme .filter-tag.active{
+  background: linear-gradient(90deg,var(--baby-2),var(--baby-3));
+  color: #022033;
+  box-shadow: 0 6px 18px rgba(62,163,255,0.08);
+}
+
+/* Make filter tags look like standard CTA buttons */
+.filter-tags .filter-tag{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease;
+  border: 1px solid rgba(3,17,22,0.06);
+  background: transparent;
+  color: rgba(3,17,22,0.84);
+}
+.filter-tags .filter-tag:hover{ transform: translateY(-2px); box-shadow: 0 6px 18px rgba(2,32,51,0.04); }
+
+/* Active tag — match .btn-primary look but with baby-blue tones */
+.filter-tags .filter-tag.active{
+  background: linear-gradient(90deg,var(--baby-2),var(--baby-3));
+  color: #022033;
+  border: 1px solid rgba(62,163,255,0.18);
+  box-shadow: 0 8px 26px rgba(62,163,255,0.10);
+}
+
+/* Ensure All Guests (data-filter="all") looks the same when active */
+.filter-tags .filter-tag[data-filter="all"].active{}
